@@ -1,7 +1,7 @@
 import { BiomDto } from "../models/dto/biom.dto";
-import jsonData from "../assets/biom.json"
+import jsonData from "../assets/biom.json";
 
-export async function getRow(index: number): Promise<BiomDto>  {
+export async function getRow(index: number): Promise<BiomDto> {
   return {
     name: await getName(index),
     taxId: await getTaxId(index),
@@ -15,7 +15,7 @@ async function getName(index: number): Promise<string> {
   return jsonData.rows[index].metadata.title;
 }
 
-async function getTaxId(index:number) {
+async function getTaxId(index: number) {
   return jsonData.rows[index].metadata.tax_id;
 }
 

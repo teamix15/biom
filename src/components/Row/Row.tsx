@@ -1,13 +1,13 @@
 import { BiomDto } from "../../models/dto/biom.dto";
 
-export function Row({bacteria}: {bacteria: BiomDto}) {
+export function Row({ bacteria }: { bacteria: BiomDto }) {
   return (
     <tr>
-      <td>{bacteria.name}</td>
-      <td>{bacteria.taxId}</td>
-      <td>{bacteria.abundanceScore}</td>
-      <td>{bacteria.relativeAbundance}</td>
-      <td>{bacteria.uniqeMatchesFrequency}</td>
+      <td data-cell="name">{bacteria.name}</td>
+      <td data-cell="taxId">{bacteria.taxId}</td>
+      <td data-cell="abundanceScore">{bacteria.abundanceScore}</td>
+      <td data-cell="relativeAbundance">{bacteria.relativeAbundance}</td>
+      <td data-cell="uniqeMatchesFrequency">{bacteria.uniqeMatchesFrequency}</td>
     </tr>
   );
 }
