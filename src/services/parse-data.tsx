@@ -24,7 +24,11 @@ async function getAbundanceScore(index: number): Promise<number> {
 }
 
 async function getRelativeAbundance(index: number): Promise<string> {
-  return (jsonData.data[index * 3][2] * 100).toFixed(2) + "%";
+  const relativeAbundance = jsonData.data[index * 3][2] * 100;
+  if (relativeAbundance < 0.01) {
+    return "<0.01%";
+  }
+  return relativeAbundance.toFixed(2) + "%";
 }
 
 async function getUniqeMatchesFrequency(index: number): Promise<number> {

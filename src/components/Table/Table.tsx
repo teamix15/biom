@@ -4,7 +4,7 @@ import { Row } from "../Row/Row";
 import jsonData from "../../assets/biom.json";
 import { getRow } from "../../services/parse-data";
 
-export default function Table() {
+export default function Table({search}: {search: string}) {
   const [loading, setLoading] = useState(true);
   const [bacteriaData, setBacteriaData] = useState<BiomDto[]>([]);
 
@@ -18,7 +18,7 @@ export default function Table() {
   }, []);
 
   return (
-    <>
+    <div className="table">
       {loading ? (
         <div>Loading...</div>
       ) : (
@@ -30,11 +30,11 @@ export default function Table() {
             <th>Relative abundance</th>
             <th>Unique matches frequency</th>
           </tr>
-          {bacteriaData.map((bacteria) => (
+          {bacteriaData.filter((bacteria) => bacteria.name.includes(search)).map((bacteria) => (
             <Row key={bacteria.name} bacteria={bacteria}></Row>
           ))}
         </table>
       )}
-    </>
+    </div>
   );
 }

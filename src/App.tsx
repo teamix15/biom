@@ -1,14 +1,26 @@
-import './App.css'
-import Table from './components/Table/Table'
+import { useState } from "react";
+import "./App.css";
+import Table from "./components/Table/Table";
 
 function App() {
-  
+  const [search, setSearch] = useState("");
 
   return (
-    <>
-      <Table />
-    </>
-  )
+    <div className="app">
+      <div className="Header">
+        <input
+          type="search"
+          id="search-form"
+          className="search-input"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+          placeholder="Search bacteria"
+        />
+      </div>
+      <Table search={search}/>
+    </div>
+  );
 }
 
-export default App
+export default App;
