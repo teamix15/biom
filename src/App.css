@@ -1,4 +1,4 @@
 .app {
   display: flex;
-  margin: 20px;
+  flex-direction: column;
 }

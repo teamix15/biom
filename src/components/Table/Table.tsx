@@ -22,17 +22,19 @@ export default function Table() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <caption>
-        <input
-          type="search"
-          className="search-input"
-          onChange={(event) => {
-            setSearch(event.target.value);
-          }}
-          placeholder="Search bacteria"
-        />
-      </caption>
+    <div className={styles.table}>
+      <div className={styles.tableSearch}>
+        <caption>
+          <input
+            type="search"
+            className="search-input"
+            onChange={(event) => {
+              setSearch(event.target.value);
+            }}
+            placeholder="Search bacteria"
+          />
+        </caption>
+      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (

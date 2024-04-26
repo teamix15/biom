@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgb(216, 211, 211);
+  padding: 0.5rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+img {
+  padding: 0.5rem;
+  width: 2rem;
+}
+
+p {
+  padding-left: 1rem;
+  font-size: large;
+}
