@@ -1,17 +1,4 @@
 .app {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  
   margin: 20px;
 }
-
-.header {
-  padding: 15px;
-  background: rgb(161, 162, 165);
-
-}
-
-
-

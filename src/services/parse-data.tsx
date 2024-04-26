@@ -12,7 +12,7 @@ export async function getRow(index: number): Promise<BiomDto> {
 }
 
 async function getName(index: number): Promise<string> {
-  return jsonData.rows[index].metadata.title;
+  return jsonData.rows[index].metadata.lineage[7].name;
 }
 
 async function getTaxId(index: number) {
