@@ -1,6 +1,6 @@
 import "./App.css";
-import Table from "./components/Table/Table";
-import Footer from "./components/Footer/Footer"
+import Table from "../Table/Table";
+import Footer from "../Footer/Footer"
 
 function App() {
   return (
