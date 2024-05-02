@@ -4,11 +4,16 @@ import { Row } from "../Row/Row";
 import jsonData from "../../assets/biom.json";
 import { getRow } from "../../services/parse-data";
 import styles from "./Table.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../features/store";
 
 export default function Table() {
-  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [bacteriaData, setBacteriaData] = useState<BiomDto[]>([]);
+
+  const search = useSelector<RootState, string>(
+    (state: RootState) => state.value
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,18 +28,6 @@ export default function Table() {
 
   return (
     <div className={styles.table}>
-      <div className={styles.tableSearch}>
-        <caption>
-          <input
-            type="search"
-            className="search-input"
-            onChange={(event) => {
-              setSearch(event.target.value);
-            }}
-            placeholder="Search bacteria"
-          />
-        </caption>
-      </div>
       {loading ? (
         <div>Loading...</div>
       ) : (
