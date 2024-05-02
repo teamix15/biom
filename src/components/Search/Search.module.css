@@ -1,0 +1,12 @@
+.search {
+  background: rgb(90, 90, 90);
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  max-width: 400px;
+}
