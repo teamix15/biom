@@ -3,5 +3,5 @@ export class BiomDto {
   taxId: number;
   abundanceScore: number;
   relativeAbundance: string;
-  uniqeMatchesFrequency: number;
+  uniqueMatchesFrequency: number;
 }

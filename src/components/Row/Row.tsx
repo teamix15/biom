@@ -7,7 +7,9 @@ export function Row({ bacteria }: { bacteria: BiomDto }) {
       <td data-cell="taxId">{bacteria.taxId}</td>
       <td data-cell="abundanceScore">{bacteria.abundanceScore}</td>
       <td data-cell="relativeAbundance">{bacteria.relativeAbundance}</td>
-      <td data-cell="uniqeMatchesFrequency">{bacteria.uniqeMatchesFrequency}</td>
+      <td data-cell="uniqeMatchesFrequency">
+        {bacteria.uniqueMatchesFrequency}
+      </td>
     </tr>
   );
 }

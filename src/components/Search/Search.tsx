@@ -1,5 +1,5 @@
-import { useAppDispatch } from "../../features/hooks";
-import { update } from "../../features/searchSlice";
+import { useAppDispatch } from "../../hooks/redux.ts";
+import { update } from "../../features/search/searchSlice";
 import styles from "./Search.module.css";
 
 export default function Search() {
@@ -11,16 +11,14 @@ export default function Search() {
 
   return (
     <div className={styles.search}>
-      <caption>
-        <input
-          type="search"
-          className="search-input"
-          onChange={(event) => {
-            updateSearch(event.target.value);
-          }}
-          placeholder="Search bacteria"
-        />
-      </caption>
+      <input
+        type="search"
+        className="search-input"
+        onChange={(event) => {
+          updateSearch(event.target.value);
+        }}
+        placeholder="Search bacteria"
+      />
     </div>
   );
 }
